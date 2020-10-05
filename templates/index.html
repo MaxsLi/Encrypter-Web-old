@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Encrypter{% endblock %}
+
+{% block main %}
+
+    <h1>Encrypter {{ version }}</h1>
+
+    <!-- user input -->
+    <form method="post">
+        <div class="form-group">
+            <textarea type="text" class="form-control" id="input" name="input" rows="4" cols="50"
+                      placeholder="Enter either some text or a cypher">{{ input }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary" formaction="encrypt">Encrypt</button>
+        <button type="submit" class="btn btn-outline-primary" formaction="decrypt">Decrypt</button>
+    </form>
+
+{% endblock %}

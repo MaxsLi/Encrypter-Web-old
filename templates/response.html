@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block response %}
+
+    <div class="form-group">
+        <h3>{{ message }}</h3>
+        <textarea id="output" type="text" class="form-control" rows="4" cols="50" disabled>{{ response }}</textarea>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='popper-1.16.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+    <!-- Page title block -->
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+<!-- Navigation bar -->
+<nav class="navbar navbar-light bg-light">
+    <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+    <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+</nav>
+
+<!-- Main block -->
+<div class="container w-50 p-5">
+    {% block main %}{% endblock %}
+</div>
+
+<!-- Response block -->
+<div class="container w-50 p-5">
+    {% block response %}{% endblock %}
+</div>
+
+</body>
+
+</html>
