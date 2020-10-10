@@ -4,13 +4,12 @@
 
 {% block main %}
 
-    <h1 {% if dark_theme %} class="text-light" {% endif %}>Encrypter {{ version }}</h1>
+    <h1 class="dynamic-text-color">Encrypter {{ version }}</h1>
 
     <!-- user input -->
     <form method="post">
         <div class="form-group">
-            <textarea type="text" class="form-control {% if dark_theme %} text-light bg-dark {% endif %}"
-                      id="input" name="input" rows="4" cols="50"
+            <textarea type="text" class="form-control dynamic-element-color" id="input" name="input" rows="4" cols="50"
                       placeholder="Enter either some text or a cypher">{{ input }}</textarea>
         </div>
         <button type="submit" class="btn btn-outline-primary" formaction="encrypt">Encrypt</button>

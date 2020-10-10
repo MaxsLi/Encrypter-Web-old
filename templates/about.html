@@ -5,8 +5,20 @@
 {% block main %}
 
     <blockquote class="blockquote">
-        <h3 class="mb-0 {% if dark_theme %} text-light {% endif %}">Encrypter web version</h3>
-        <footer class="blockquote-footer">By Shangru Li</footer>
+        <h1 class="mb-0 dynamic-text-color">Encrypter web version</h1>
+        <footer class="blockquote-footer">By <a href="https://www.shangruli.com/">Shangru Li</a></footer>
     </blockquote>
+
+    <div id="changelog" class="dynamic-text-color">
+        <h3 class="border-bottom">Changelog</h3>
+        <div id="v100">
+            <h5>Version 1.0.0 <small class="text-muted">(10/09/2020)</small></h5>
+            <ul>
+                <li>
+                    Initial release.
+                </li>
+            </ul>
+        </div>
+    </div>
 
 {% endblock %}

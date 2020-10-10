@@ -48,4 +48,19 @@
 
 </body>
 
+<style type="text/css">
+    .dynamic-text-color {
+    {% if dark_theme %}
+        color: #f8f9fa !important;
+    {% endif %}
+    }
+
+    .dynamic-element-color {
+    {% if dark_theme %}
+        color: #f8f9fa !important;
+        background-color: #343a40 !important;
+    {% endif %}
+    }
+</style>
+
 </html>
