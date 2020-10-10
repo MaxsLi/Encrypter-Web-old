@@ -7,6 +7,8 @@ app.secret_key = 'w845n#9V!#!!9C!n%6iY'
 
 @app.route('/')
 def index():
+    if 'dark_theme' not in session:
+        session['dark_theme']: bool = False
     return render_template('index.html', version=ED.__version__, dark_theme=session['dark_theme'])
 
 
@@ -32,7 +34,8 @@ def encrypt():
     """
     Encrypt the given input using encryptor
     """
-    return render_template('response.html', version=ED.__version__, dark_theme=session['dark_theme'], input=request.form['input'],
+    return render_template('response.html', version=ED.__version__, dark_theme=session['dark_theme'],
+                           input=request.form['input'],
                            message="Encrypted", response=ED.encrypt(request.form['input'], False))
 
 
@@ -54,4 +57,3 @@ def decrypt():
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
-    session['dark_theme']: bool = False
