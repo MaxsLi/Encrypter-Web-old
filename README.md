@@ -1,6 +1,6 @@
 # [Encrypter-Web](https://encrypter-web.herokuapp.com/)
 
-Web version of application [Encrypter](https://github.com/MaxsLi/Encrypter)
+Web version of application [Encrypter](https://github.com/MaxsLi/Encrypter).
 
 ## Description
 
