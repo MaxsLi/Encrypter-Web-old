@@ -9,6 +9,9 @@ and hosted on [Heroku](https://www.heroku.com/).
 
 [**Link**](https://encrypter-web.herokuapp.com/)
 
-## Screenshot
+## Screenshots
 
-![Application screenshot](/static/screenshot.png)
+| Light Theme    | Dark Theme   |
+| :------------: | :----------: |
+| ![Home page in light theme](/static/screenshot1.png) | ![Home page in dark theme](/static/screenshot2.png) |
+| ![Encrypt text in light theme](/static/screenshot3.png) | ![Decrypt cypher in dark theme](/static/screenshot4.png) |
