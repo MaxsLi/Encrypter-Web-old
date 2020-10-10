@@ -1,34 +1,29 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import ED
 
 app = Flask(__name__)
-
-dark_theme: bool = False
+app.secret_key = 'w845n#9V!#!!9C!n%6iY'
 
 
 @app.route('/')
 def index():
-    global dark_theme
-    return render_template('index.html', version=ED.__version__, dark_theme=dark_theme)
+    return render_template('index.html', version=ED.__version__, dark_theme=session['dark_theme'])
 
 
 @app.route('/about')
 def about():
-    global dark_theme
-    return render_template('about.html', dark_theme=dark_theme)
+    return render_template('about.html', dark_theme=session['dark_theme'])
 
 
 @app.route('/light_theme', methods=['POST'])
 def light_theme():
-    global dark_theme
-    dark_theme = False
+    session['dark_theme'] = False
     return redirect(url_for('index'))
 
 
 @app.route('/dark_theme', methods=['POST'])
 def dark_theme():
-    global dark_theme
-    dark_theme = True
+    session['dark_theme'] = True
     return redirect(url_for('index'))
 
 
@@ -37,8 +32,7 @@ def encrypt():
     """
     Encrypt the given input using encryptor
     """
-    global dark_theme
-    return render_template('response.html', version=ED.__version__, dark_theme=dark_theme, input=request.form['input'],
+    return render_template('response.html', version=ED.__version__, dark_theme=session['dark_theme'], input=request.form['input'],
                            message="Encrypted", response=ED.encrypt(request.form['input'], False))
 
 
@@ -47,13 +41,12 @@ def decrypt():
     """
     Decrypt the Given cypher using encryptor
     """
-    global dark_theme
     try:
-        return render_template('response.html', version=ED.__version__, dark_theme=dark_theme,
+        return render_template('response.html', version=ED.__version__, dark_theme=session['dark_theme'],
                                input=request.form['input'], message="Decrypted",
                                response=ED.decrypt(request.form['input'], False))
     except SyntaxError:
-        return render_template('response.html', version=ED.__version__, dark_theme=dark_theme,
+        return render_template('response.html', version=ED.__version__, dark_theme=session['dark_theme'],
                                input=request.form['input'], message="Error",
                                response="Decryption failed, please make sure the encrypted text is correct.")
 
@@ -61,3 +54,4 @@ def decrypt():
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
+    session['dark_theme']: bool = False
