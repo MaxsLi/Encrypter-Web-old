@@ -8,11 +8,13 @@ dark_theme: bool = False
 
 @app.route('/')
 def index():
+    global dark_theme
     return render_template('index.html', version=ED.__version__, dark_theme=dark_theme)
 
 
 @app.route('/about')
 def about():
+    global dark_theme
     return render_template('about.html', dark_theme=dark_theme)
 
 
@@ -35,6 +37,7 @@ def encrypt():
     """
     Encrypt the given input using encryptor
     """
+    global dark_theme
     return render_template('response.html', version=ED.__version__, dark_theme=dark_theme, input=request.form['input'],
                            message="Encrypted", response=ED.encrypt(request.form['input'], False))
 
@@ -44,6 +47,7 @@ def decrypt():
     """
     Decrypt the Given cypher using encryptor
     """
+    global dark_theme
     try:
         return render_template('response.html', version=ED.__version__, dark_theme=dark_theme,
                                input=request.form['input'], message="Decrypted",
