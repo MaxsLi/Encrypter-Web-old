@@ -17,13 +17,24 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body>
+<body {% if dark_theme %} style="background: #212121" {% endif %}>
 
 <!-- Navigation bar -->
-<nav class="navbar navbar-light bg-light">
-    <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-    <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-</nav>
+<header class="navbar navbar-expand sticky-top {% if dark_theme %} navbar-dark bg-dark {% else %} navbar-light bg-light {% endif %}">
+    <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        </li>
+    </ul>
+    <form method="post" class="ml-auto">
+        {% if dark_theme %}
+            <button type="submit" class="btn btn-outline-light border-0" formaction="light_theme">Light theme</button>
+        {% else %}
+            <button type="submit" class="btn btn-outline-dark border-0" formaction="dark_theme">Dark theme</button>
+        {% endif %}
+    </form>
+</header>
 
 <!-- Main block -->
 <div class="container w-50 p-5">

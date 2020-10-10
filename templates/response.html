@@ -3,9 +3,25 @@
 {% block response %}
 
     <div class="form-group">
-        <h3>{{ message }}</h3>
-        <textarea id="output" type="text" class="form-control" rows="4" cols="50" disabled>{{ response }}</textarea>
+        <h3 {% if dark_theme %} class="text-light" {% endif %}>{{ message }}</h3>
+        <textarea id="output" type="text" class="form-control {% if dark_theme %} text-light bg-dark {% endif %}"
+                  rows="4" cols="50" readonly>{{ response }}</textarea>
     </div>
+    <button class="btn btn-outline-primary " onclick="copyText()">Copy</button>
+
+    <script type="application/javascript">
+        function copyText() {
+          /* Get the text field */
+          const output = document.getElementById("output");
+
+          /* Select the text field */
+          output.select();
+          output.setSelectionRange(0, 99999); /*For mobile devices*/
+
+          /* Copy the text inside the text field */
+          document.execCommand("copy");
+        }
+    </script>
 
 {% endblock %}
 
