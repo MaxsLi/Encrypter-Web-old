@@ -38,7 +38,7 @@ def dark_theme():
 @app.route('/encrypt', methods=['POST'])
 def encrypt():
     """
-    Encrypt the given input using encryptor
+    Encrypt the given input using Encrypter
     """
     return render_template('response.html',
                            version=ED.__version__,
@@ -51,7 +51,7 @@ def encrypt():
 @app.route('/decrypt', methods=['POST'])
 def decrypt():
     """
-    Decrypt the Given cypher using encryptor
+    Decrypt the Given cypher using Encrypter
     """
     try:
         return render_template('response.html',
@@ -59,8 +59,7 @@ def decrypt():
                                dark_theme=session['dark_theme'],
                                input=request.form['input'],
                                message="Decrypted",
-                               response=ED.decrypt(request.form['input'],
-                                                   False))
+                               response=ED.decrypt(request.form['input'], False))
     except SyntaxError:
         return render_template(
             'response.html',
@@ -68,9 +67,7 @@ def decrypt():
             dark_theme=session['dark_theme'],
             input=request.form['input'],
             message="Error",
-            response=
-            "Decryption failed, please make sure the encrypted text is correct."
-        )
+            response="Decryption failed, please make sure the encrypted text is correct.")
 
 
 if __name__ == '__main__':

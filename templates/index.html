@@ -4,19 +4,19 @@
 
 {% block main %}
 
-    <h1 class="dynamic-text-color">Encrypter {{ version }}</h1>
+<h1 class="dynamic-text-color">Encrypter {{ version }}</h1>
 
-    <!-- user input -->
-    <form method="post">
-        <div class="form-group">
-            <textarea type="text" class="form-control dynamic-element-color" id="input" name="input" rows="4" cols="50"
-                      placeholder="Enter either some text or a cypher">{{ input }}</textarea>
-        </div>
-        <button type="submit" class="btn btn-outline-primary" formaction="encrypt">Encrypt</button>
-        <button type="submit" class="btn btn-outline-primary" formaction="decrypt">Decrypt</button>
-        <button type="reset" class="btn btn-outline-secondary ml-auto"
-                onclick="document.getElementById('input').textContent = '' ">Clear
-        </button>
-    </form>
+<!-- user input -->
+<form method="post">
+    <div class="form-group">
+        <textarea type="text" class="form-control dynamic-element-color" id="input" name="input" rows="4" cols="50"
+            placeholder="Enter either some text or a cypher">{{ input }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" formaction="encrypt">Encrypt</button>
+    <button type="submit" class="btn btn-outline-primary" formaction="decrypt">Decrypt</button>
+    <button type="reset" class="btn btn-outline-secondary ml-auto"
+        onclick="document.getElementById('input').textContent = '' ">Clear
+    </button>
+</form>
 
 {% endblock %}

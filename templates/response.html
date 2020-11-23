@@ -2,26 +2,25 @@
 
 {% block response %}
 
-    <div class="form-group">
-        <h3 class="dynamic-text-color">{{ message }}</h3>
-        <textarea id="output" type="text" class="form-control dynamic-element-color" rows="4" cols="50"
-                  readonly>{{ response }}</textarea>
-    </div>
-    <button class="btn btn-outline-primary " onclick="copyText()">Copy</button>
+<div class="form-group">
+    <h3 class="dynamic-text-color">{{ message }}</h3>
+    <textarea id="output" type="text" class="form-control dynamic-element-color" rows="4" cols="50"
+        readonly>{{ response }}</textarea>
+</div>
+<button class="btn btn-outline-primary " onclick="copyText()">Copy</button>
 
-    <script type="application/javascript">
-        function copyText() {
-            /* Get the text field */
-            const output = document.getElementById("output");
+<script type="application/javascript">
+    function copyText() {
+        /* Get the text field */
+        const output = document.getElementById("output");
 
-            /* Select the text field */
-            output.select();
-            output.setSelectionRange(0, -1); /*For mobile devices*/
+        /* Select the text field */
+        output.select();
+        output.setSelectionRange(0, -1); /*For mobile devices*/
 
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-        }
-    </script>
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+    }
+</script>
 
 {% endblock %}
-
