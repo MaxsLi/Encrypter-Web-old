@@ -45,7 +45,7 @@ def encrypt():
                            dark_theme=session['dark_theme'],
                            input=request.form['input'],
                            message="Encrypted",
-                           response=ED.encrypt(request.form['input'], False))
+                           response=ED.encrypt(request.form['input']))
 
 
 @app.route('/decrypt', methods=['POST'])
@@ -59,7 +59,7 @@ def decrypt():
                                dark_theme=session['dark_theme'],
                                input=request.form['input'],
                                message="Decrypted",
-                               response=ED.decrypt(request.form['input'], False))
+                               response=ED.decrypt(request.form['input']))
     except SyntaxError:
         return render_template(
             'response.html',
