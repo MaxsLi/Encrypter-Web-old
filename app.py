@@ -40,12 +40,20 @@ def encrypt():
     """
     Encrypt the given input using Encrypter
     """
-    return render_template('response.html',
-                           version=ED.__version__,
-                           dark_theme=session['dark_theme'],
-                           input=request.form['input'],
-                           message="Encrypted",
-                           response=ED.encrypt(request.form['input']))
+    try:
+        return render_template('response.html',
+                               version=ED.__version__,
+                               dark_theme=session['dark_theme'],
+                               input=request.form['input'],
+                               message="Encrypted",
+                               response=ED.encrypt(request.form['input']))
+    except SyntaxError as error:
+        return render_template('response.html',
+                               version=ED.__version__,
+                               dark_theme=session['dark_theme'],
+                               input=request.form['input'],
+                               message="Error",
+                               response=error.msg)
 
 
 @app.route('/decrypt', methods=['POST'])
@@ -60,14 +68,13 @@ def decrypt():
                                input=request.form['input'],
                                message="Decrypted",
                                response=ED.decrypt(request.form['input']))
-    except SyntaxError:
-        return render_template(
-            'response.html',
-            version=ED.__version__,
-            dark_theme=session['dark_theme'],
-            input=request.form['input'],
-            message="Error",
-            response="Decryption failed, please make sure the encrypted text is correct.")
+    except SyntaxError as error:
+        return render_template('response.html',
+                               version=ED.__version__,
+                               dark_theme=session['dark_theme'],
+                               input=request.form['input'],
+                               message="Error",
+                               response=error.msg)
 
 
 if __name__ == '__main__':
