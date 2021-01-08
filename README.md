@@ -5,11 +5,12 @@ Web version of Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
 ## Description
 
 The web app is written using Python web framework [Flask](https://flask.palletsprojects.com/en/1.1.x/),
-and hosted on [Heroku](https://www.heroku.com/).
+with [Bootstrap4](https://getbootstrap.com/).
 
-The back-end script is imported remotely from the [Encrypter repository](https://github.com/MaxsLi/Encrypter).
+The back-end script is imported remotely from the [Encrypter repository](https://github.com/MaxsLi/Encrypter),
+using [httpimport](https://github.com/operatorequals/httpimport) script.
 
-[**Link to Web app**](https://encrypter-web.herokuapp.com/)
+Web application is currently hosted on Heroku, [**link**](https://encrypter-web.herokuapp.com/).
 
 ## Screenshots
 
