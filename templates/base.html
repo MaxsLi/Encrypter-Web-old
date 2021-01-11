@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='popper-1.16.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
     <!-- Page title block -->
     <title>{% block title %}{% endblock %}</title>
@@ -20,20 +20,22 @@
 <body {% if dark_theme %} style="background: #212121" {% endif %}>
     <!-- Navigation bar -->
     <header
-        class="navbar navbar-expand sticky-top {% if dark_theme %} navbar-dark bg-dark {% else %} navbar-light bg-light {% endif %}">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('about') }}">About</a>
-            </li>
-        </ul>
-        <form method="post" class="ml-auto">
-            {% if dark_theme %}
-            <button type="submit" class="btn btn-outline-light border-0" formaction="light_theme">Light theme</button>
-            {% else %}
-            <button type="submit" class="btn btn-outline-dark border-0" formaction="dark_theme">Dark theme</button>
-            {% endif %}
-        </form>
+        class="navbar sticky-top {% if dark_theme %} navbar-dark bg-dark {% else %} navbar-light bg-light {% endif %}">
+        <nav class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+            </ul>
+            <form method="post" class="ml-auto">
+                {% if dark_theme %}
+                <button type="submit" class="btn btn-outline-light border-0" formaction="light_theme">Light theme</button>
+                {% else %}
+                <button type="submit" class="btn btn-outline-dark border-0" formaction="dark_theme">Dark theme</button>
+                {% endif %}
+            </form>
+        </nav>
     </header>
 
     <!-- Main block -->

@@ -1,0 +1,30 @@
+{
+  "name": "encrypter-web",
+  "version": "1.0.4",
+  "description": "Simple site to encrypt and decrypt any input",
+  "main": "app.py",
+  "scripts": {
+    "run": "cd .. && flask run",
+    "test": "cd .. && echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxsLi/Encrypter-Web.git"
+  },
+  "keywords": [
+    "python3",
+    "flask",
+    "encryption"
+  ],
+  "author": "Shangru Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaxsLi/Encrypter-Web/issues"
+  },
+  "homepage": "https://github.com/MaxsLi/Encrypter-Web#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.6.0",
+    "bootstrap": "^5.0.0-beta1",
+    "jquery": "^3.5.1"
+  }
+}
