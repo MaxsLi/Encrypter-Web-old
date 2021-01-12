@@ -5,7 +5,7 @@ Web version of Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
 ## Description
 
 The web app is written using Python web framework [Flask](https://flask.palletsprojects.com/en/1.1.x/),
-with [Bootstrap4](https://getbootstrap.com/).
+with [Bootstrap5](https://getbootstrap.com/).
 
 The back-end script is imported remotely from the [Encrypter repository](https://github.com/MaxsLi/Encrypter),
 using [httpimport](https://github.com/operatorequals/httpimport) script.
