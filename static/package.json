@@ -14,7 +14,8 @@
   "keywords": [
     "python3",
     "flask",
-    "encryption"
+    "encryption",
+    "bootstrap"
   ],
   "author": "Shangru Li",
   "license": "MIT",
