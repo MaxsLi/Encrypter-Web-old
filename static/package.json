@@ -1,6 +1,6 @@
 {
   "name": "encrypter-web",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple site to encrypt and decrypt any input",
   "main": "app.py",
   "scripts": {
