@@ -4,8 +4,7 @@
 
 <div class="mb-3">
     <h3 class="dynamic-text-color">{{ message }}</h3>
-    <textarea id="output" type="text" class="form-control dynamic-element-color" rows="4" cols="50"
-        readonly>{{ response }}</textarea>
+    <textarea id="output" type="text" class="form-control dynamic-element-color" rows="4" cols="50" readonly>{{ response }}</textarea>
 </div>
 <div>
     <button class="btn btn-outline-primary " onclick="copyText()">Copy</button>
@@ -26,12 +25,11 @@
 </script>
 
 <style type="text/css">
-    #output {
-        {% if dark_theme %}
-            color: #f8f9fa !important;
-            background-color: #343a4040 !important;
-        {% endif %}
-    }
+    {% if dark_theme %}
+        #output {
+            background-color: #1b1c1f !important;
+        }
+    {% endif %}
 </style>
 
 {% endblock %}

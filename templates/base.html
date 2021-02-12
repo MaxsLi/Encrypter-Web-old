@@ -59,18 +59,15 @@
         white-space: nowrap;
     }
 
+    {% if dark_theme %}
     .dynamic-text-color {
-        {% if dark_theme %}
-            color: #f8f9fa !important;
-        {% endif %}
+        color: #f8f9fa !important;
     }
-
     .dynamic-element-color {
-        {% if dark_theme %}
-            color: #f8f9fa !important;
-            background-color: #343a40 !important;
-        {% endif %}
+        color: #f8f9fa !important;
+        background-color: #343a40 !important;
     }
+    {% endif %}
 </style>
 
 </html>
