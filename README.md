@@ -11,14 +11,6 @@ using [httpimport](https://github.com/operatorequals/httpimport).
 
 This web application is currently hosted on Heroku, [**link**](https://encrypter-web.herokuapp.com/).
 
-
-## Installtion
-
-```bash
-cd static
-npm install
-```
-
 ## Screenshots
 
 | Light Theme    | Dark Theme   |
