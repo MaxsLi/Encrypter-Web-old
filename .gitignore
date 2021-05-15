@@ -2,3 +2,6 @@
 __pycache__
 # Environments
 venv
+# Node stuff
+static/node_modules
+static/package-lock.json
